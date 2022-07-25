@@ -1,0 +1,61 @@
+﻿@model NewProject.ViewModel.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://img.freepik.com/premium-vector/cute-kids-eat-sweet-food-two-friends-park-boy-character-glasses-holding-ice-cream-present-share-with-jumping-girl-childhood-friendship-isolated-white_575670-2365.jpg?w=740"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="card bg-glass col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <div class="card-body px-4 py-5">
+        <a class="header">CRS KIDS CASE STUDY</a><br />
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" asp-for="Email" />
+            <label class="form-label" for="form3Example3" asp-for="Email">Email address</label>
+             <span asp-validation-for="Email" class="text-danger"></span>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" id="form3Example4" class="form-control form-control-lg"
+              placeholder="Enter password"  asp-for="Password" />
+            <label class="form-label" for="form3Example4"  asp-for="Password">Password</label>
+            <span asp-validation-for="Password" class="text-danger"></span>
+          </div>
+                        <!-- Confirm Password input -->
+              <div class="form-outline mb-3">
+                <input type="password" id="form3Example4" class="form-control" asp-for="ConfirmPassword"/>
+                <label class="form-label" for="form3Example4" asp-for="ConfirmPassword" >Password</label>
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+              </div>
+               <small id="passwordHelpBlock" class="form-text text-muted pass-alert">
+                  Create a password of at least 8 digits with at least one uppercase and lowercase letter, one digit and one digit.                  
+               </small>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+
+            <p class="small mt-2 pt-1 mb-0">Do you have an account? <a  asp-controller="Account" asp-action="Login"
+                class="link-primary">Login</a></p>
+          </div>
+
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
+></script>
